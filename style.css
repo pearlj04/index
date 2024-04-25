@@ -1,0 +1,232 @@
+
+*{
+    margin-top: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+.navbar_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: -0.5rem 1rem !important;
+    background: rgb(71, 28, 41);
+    color: #fff;
+    position: fixed;
+    z-index: 8;
+    width: 100%;
+    font-family: 'Noto Sans Lepcha'!important;
+}
+.nav-links{
+    padding-right: 10px;
+    padding-top: 10px;
+}
+.nav-links a {
+    color: #fff;
+}
+.logo, img {
+    font-size: 20px;
+    padding-left: 10px;
+    font-family: 'Noto Sans Lepcha'!important;
+    width: 90px;
+    height: 75px; /* Adjust height  */
+    border-radius: 50%;
+    background-color: transparent;
+    margin-right: 10px;
+    opacity: 0.9;
+}
+.menu {
+    display: flex;
+    gap: 1em;
+    font-size: 18px;
+}
+.menu li:hover {
+    background-color: #9e4c53;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+.menu li {
+    padding: 5px 14px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+.bar_icon {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+}
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        position: absolute;
+        background: rgba(88, 38, 49, 0.89);
+        right: 0;
+        left: 0;
+        text-align: center;
+        padding: 16px 0;
+        z-index: 5;
+    }
+    .menu li:hover {
+        display: inline-block;
+        background-color: #4c9e9e;
+        transition: 0.3s ease;
+    }
+    
+    input[type="checkbox"]:checked ~ .menu {
+        display: block;
+    }
+    .bar_icon {
+        display: block;
+    }
+}
+
+.home-sec {
+    padding-top: 10px !important;
+    background: url("school.jpg") no-repeat center center;
+    padding: 0;
+    background-size: cover;
+    background-size: cover;
+    color: #fff;
+    height: 600px;
+     background-attachment: fixed;
+    font-family: 'Noto Sans Lepcha'!important;
+}
+
+.home-sec .overlay {
+    background: rgba(88, 38, 46, 0.89);
+    min-height: 600px;
+}
+
+.home-sec .overlay .container .row .col-sm-12 {
+    text-align: center;
+    z-index: 3;
+    padding-top: 145px;
+}
+
+.home-sec h1 {
+    color: #fff;
+    font-weight: 600;
+    font-size: 50px;
+    text-transform: uppercase;
+    padding-bottom: 35px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    border-bottom: 4px solid rgb(255, 255, 255);
+}
+
+
+
+
+
+
+
+.row_width{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px !important;
+}
+.p_width{
+    width: 50%;
+}
+.icon-round-border {
+    border: 10px double #1a94c4;
+    color: #2f9484;
+    text-align: center;
+    padding-top: 15px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.fa {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+}
+
+.our-coreheads {
+    padding-top: 10px;
+    padding-bottom: 60px;
+    background: url("book-chalkboard-image2.jpg") no-repeat center center;
+    padding: 0;
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed;
+    font-family: 'Noto Sans Lepcha'!important;
+}
+
+.our-coreheads .overlay {
+    background: rgba(88, 38, 46, 0.89);
+    min-height: 700px;
+}
+
+.our-coreheads .font_size {
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 5px;
+    padding-top: 65px;
+    color: #fff;
+    border-bottom: 4px solid rgb(128, 0, 17);
+}
+.hadding_pt{
+    padding: 75px 0px 20px 0px;
+    font-family: 'Noto Sans Lepcha'!important;
+}
+.img_border_double {
+    border: 10px double #ffffff;
+}
+.hr_5{
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 5px;
+}
+.hadding_bt{
+    border-bottom: 3px solid rgb(61, 23, 23);
+}
+
+/* formmmmmm */
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+label {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+input[type="radio"] {
+    margin-right: 5px;
+    display: block;
+}
+button {
+    display: block;
+    margin-top: 10px;
+    padding: 8px 20px;
+    background-color: #00ff40;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+.results {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

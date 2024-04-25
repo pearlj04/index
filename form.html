@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Form</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        button {
+            display: block;
+            margin-top: 10px;
+            padding: 8px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .results {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form id="quizForm">
+        <h2>Quiz Form</h2>
+        <div class="question">
+            <label for="q1">Question 1: What is the capital of France?</label>
+            <input type="radio" name="q1" value="paris" id="q1a"> <label for="q1a">Paris</label><br>
+            <input type="radio" name="q1" value="london" id="q1b"> <label for="q1b">London</label><br>
+            <input type="radio" name="q1" value="berlin" id="q1c"> <label for="q1c">Berlin</label><br>
+            <input type="radio" name="q1" value="madrid" id="q1d"> <label for="q1d">Madrid</label>
+        </div>
+        <div class="question">
+            <label for="q2">Question 2: What is the tallest mountain in the world?</label>
+            <input type="radio" name="q2" value="everest" id="q2a"> <label for="q2a">Mount Everest</label><br>
+            <input type="radio" name="q2" value="k2" id="q2b"> <label for="q2b">K2</label><br>
+            <input type="radio" name="q2" value="kilimanjaro" id="q2c"> <label for="q2c">Kilimanjaro</label><br>
+            <input type="radio" name="q2" value="denali" id="q2d"> <label for="q2d">Denali</label>
+        </div>
+        <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+    </form>
+
+    <div id="results" class="results" style="display:none;">
+        <h2>Results</h2>
+        <div id="resultText"></div>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            // Get all the selected answers
+            var answers = {};
+            var questions = document.querySelectorAll('.question');
+            questions.forEach(function(question) {
+                var questionId = question.querySelector('input[type="radio"]:checked').name;
+                var answer = question.querySelector('input[type="radio"]:checked').value;
+                answers[questionId] = answer;
+            });
+
+            // Compare answers with correct answers
+            var correctAnswers = {
+                'q1': 'paris',
+                'q2': 'everest'
+            };
+            var score = 0;
+            var resultText = '<ul>';
+            for (var questionId in answers) {
+                if (answers.hasOwnProperty(questionId)) {
+                    resultText += '<li>';
+                    resultText += 'Question ' + questionId.slice(1) + ': ';
+                    resultText += (answers[questionId] === correctAnswers[questionId]) ? 'Correct' : 'Incorrect';
+                    resultText += '</li>';
+                    if (answers[questionId] === correctAnswers[questionId]) {
+                        score++;
+                    }
+                }
+            }
+            resultText += '</ul>';
+            resultText += '<p>Total Score: ' + score + '/' + Object.keys(correctAnswers).length + '</p>';
+
+            // Display results
+            document.getElementById('resultText').innerHTML = resultText;
+            document.getElementById('results').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
